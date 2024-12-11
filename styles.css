@@ -1,0 +1,352 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+.main-section {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+}
+
+
+.main-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.main-content:hover img {
+    transform: scale(1.1); /* 확대 효과 */
+    filter: blur(5px); /* 블러 효과 */
+}
+
+.main-content .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은 배경 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0; /* 초기 상태는 투명 */
+    transition: opacity 0.5s ease;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content:hover .overlay {
+    opacity: 1; /* 마우스 오버 시 표시 */
+}
+
+.main-content .overlay h2 {
+    font-size: 36px; /* 기본 글자 크기 */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.main-content .overlay p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* 작은 화면에서 텍스트 크기 줄이기 */
+@media (max-width: 768px) {
+    .main-content .overlay h2 {
+        font-size: 24px; /* 태블릿 크기 글자 축소 */
+    }
+
+    .main-content .overlay p {
+        font-size: 16px; /* 태블릿 크기 글자 축소 */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content .overlay h2 {
+        font-size: 10px; /* 모바일 크기 글자 축소 */
+    }
+
+    .main-content .overlay p {
+        font-size: 14px; /* 모바일 크기 글자 축소 */
+        line-height: 1.0; /* 줄 간격 조정 */
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    height: 36px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 100px);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 15px; 
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: #5d00ff;
+}
+
+.container {
+    scroll-margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 50px;
+    justify-items: center;
+}
+
+.card {
+    width: 340px;
+    height: 340px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-back {
+    background-color: #f0f0f0; /* 뒷면 배경색 */
+    color: #333; /* 텍스트 색상 */
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* 카드 뒷면 텍스트 */
+.card-back p {
+    margin: 0;
+    color: #555;
+    line-height: 1.8;
+}
+
+.card img {
+    width: 340px;
+    height: 240px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #777;
+    margin: 0 15px 15px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-section {
+    scroll-margin-top: 90px;
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 좌우 중앙 정렬 */
+    padding: 20px 0; /* 위아래 여백 추가 */
+    text-align: center;
+    margin-bottom: 50px; 
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 제한 */
+    height: auto; /* 비율에 맞게 높이 자동 조정 */
+    aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+}
+
+/* Contact Page 스타일 */
+
+.contact-body {
+    background-image: url('assets/images/main.jpeg');
+    background-size: cover; /* 화면에 꽉 차게 */
+    background-position: center; /* 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-attachment: fixed; /* 스크롤 시 배경 고정 */
+}
+.contact-page {
+    max-width: 800px;
+    margin: 140px auto 50px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Contact Form 스타일 */
+.contact-form {
+    padding: 20px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: center;
+}
+
+.contact-form form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #555;
+}
+/* Contact Form과 지도 컨테이너 */
+.form-and-map {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap; /* 화면 크기가 작아지면 세로 정렬 */
+}
+
+.form-and-map form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+footer {
+    font-weight: bold;
+    left: 0; 
+    width: 100%;
+    text-align: center;
+    color: black; 
+    text-shadow:
+    -1px -1px 0 white, /* 왼쪽 위 */
+    1px -1px 0 white,  /* 오른쪽 위 */
+    -1px 1px 0 white,  /* 왼쪽 아래 */
+    1px 1px 0 white;   /* 오른쪽 아래 */
+    z-index: 1000; /* 다른 요소 위에 배치 */
+}

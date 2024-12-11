@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-body">
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/images/logo.svg" alt="Site Logo" class="logo">
+            </a>
+            <h1>Food of the Future</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#food-section">Food</a>
+            <a href="index.html#video-section">Video</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+
+    <main class="contact-page">
+        <section id="contact-form" class="contact-form">
+            <h2>Contact Form</h2>
+            <div class="form-and-map">
+                <!-- Contact Form -->
+                <form action="#">
+                    <div>
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="your-name">
+                    </div>
+                    <div>
+                        <label for="email">메일 주소</label>
+                        <input type="email" id="email" name="your-email">
+                    </div>
+                    <div>
+                        <label for="message">메시지</label>
+                        <textarea id="message" name="your-message"></textarea>
+                    </div>
+                    <input type="submit" class="button" value="전송">
+                </form>
+        
+                <!-- 지도 -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.2098540899506!2d127.26778109999997!3d37.33754020000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b556308278329%3A0xa0cb1bdc6f35f94!2z7Jqp7J247IucIOuqqO2YhOydjSDtlZzqta3smbjqta3slrTrjIDtlZnqtZAg6rO17ZWZ6rSA!5e0!3m2!1sko!2skr!4v1733904628193!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food of the Future. All rights reserved.</p>
+    </footer>
+</body>
+</html>
