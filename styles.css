@@ -17,6 +17,9 @@ body {
     overflow: hidden;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .main-content img {
