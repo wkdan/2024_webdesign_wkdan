@@ -9,6 +9,12 @@ body {
     width: 100%;
     max-width: 1920px;
     height: auto;
+    display: flex; /* Flexbox 활성화 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 (필요시) */
+    margin: 0 auto; /* 섹션 중앙 정렬 */
+    padding-top: 80px; /* 헤더 높이에 맞춰 패딩 추가 */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
 }
 
 
