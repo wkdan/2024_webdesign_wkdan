@@ -47,7 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    opacity: 0; /* 초기 상태는 투명 */
+    opacity: 0;
     transition: opacity 0.5s ease;
     text-align: center;
     padding: 20px;
